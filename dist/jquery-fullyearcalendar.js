@@ -1,8 +1,3 @@
-/**
- * @description : This extension allow to display the months of a year and  associate to each month a special events or a link.
- * @version : 1.0
- * @author Emmanuel ADEKPLOVI : <emmanuel.adekplovi@homescriptone.com>
- */
 (function ($) {
     $.fn.fullYearCalendar = function (options) {
         let date_obj = new Date();
@@ -19,18 +14,18 @@
         fullYearCalendar(this,settings);
         function fullYearCalendar(selector,settings){
             if (settings.attr_css){
-                for(css_attr in settings.attr_css ){
+                for(let css_attr in settings.attr_css ){
                     selector.css(css_attr, settings.attr_css[css_attr])
                 }
             }
-            selector.append('<div class="hs-fullyearcalendar-options-panel">'+'<div class="hs-fullyearcalendar-btn-prev"> <button class="btn btn-primary">Prev</button></div>'+'<div class="hs-fullyearcalendar-options"><strong>'+current_Year+'</strong></div>'+'<div class="hs-fullyearcalendar-btn-next"> <button class="btn btn-primary">Next</button></div>'+'</div>')
+            selector.append('<div class="hs-fullyearcalendar-options-panel">'+'<div class="hs-fullyearcalendar-btn-prev"> <button class="btn btn-primary">Prev</button></div>'+'<div class="hs-fullyearcalendar-options"><strong style="vertical-align: -webkit-baseline-middle;">'+current_Year+'</strong></div>'+'<div class="hs-fullyearcalendar-btn-next"> <button class="btn btn-primary">Next</button></div>'+'</div>')
             selector.append('<div class="hs-fullyearcalendar"> <div class="hs-fullyearcalendar-semester-1"><div>Janvier</div> <div>Fevrier</div> <div>Mars</div> <div>Avril</div> <div>Mai</div> <div>Juin</div></div> <div class="hs-fullyearcalendar-semester-2"><div>Juillet</div> <div>Aout</div>  <div>Septembre</div> <div>Octobre</div> <div>Novembre</div> <div>Decembre</div></div>        </div>')
             if ($.isFunction(settings.hover)){
                 settings.hover.call(this)
             }
             if (settings.div_color_1){
                 $('div.hs-fullyearcalendar-semester-1 div').css('background-color',settings.div_color_1)
-                
+
             }
 
             if (settings.div_color_2){
@@ -52,25 +47,13 @@
 
 
         function getPrevYear(year){
-            $(document).ready(function(){
-                $('div.hs-fullyearcalendar-btn-prev').on('click dbclick',function(){
-                    $('div.hs-fullyearcalendar-options').html("<strong>"+parseInt(year-1)+"</strong>");
-                    current_Year = year - 1;
-                });
-            });
+            current_Year = year -1;
+            $('div.hs-fullyearcalendar-options strong').html(parseInt(current_Year));
         }
 
         function getNextYear(year){
-            $(document).ready(function(){
-                $('div.hs-fullyearcalendar-btn-next').on('click dbclick',function(){
-                    $('div.hs-fullyearcalendar-options').html("<strong>"+parseInt(year+1)+"</strong>");
-                    current_Year = year + 1;
-                });
-            });
+            current_Year = year + 1;
+            $('div.hs-fullyearcalendar-options strong').html(parseInt(current_Year));
         }
     };
-    
-    
-
-    
 }(jQuery, window, document));
