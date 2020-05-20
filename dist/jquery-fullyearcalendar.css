@@ -3,24 +3,26 @@
  * @version : 1.0
  * @author Emmanuel ADEKPLOVI : <emmanuel.adekplovi@homescriptone.com>
  */
- 
+
 div.hs-fullyearcalendar-options-panel{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
+
 
 div.hs-fullyearcalendar-options-panel div{
    padding: 10px;
 }
 
 div.hs-fullyearcalendar-semester-1, .hs-fullyearcalendar-semester-2{
-    display: flex; 
+    display: flex;
 }
 
 div.hs-fullyearcalendar-semester-1 div, .hs-fullyearcalendar-semester-2 div{
     width: 250px;
     height: 250px;
     margin: 10px;
-    margin-bottom: 10px;
     text-align: center;
     font-weight: bolder;
     font-family: montserrat;
