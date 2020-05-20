@@ -28,8 +28,8 @@
             if ($.isFunction(settings.hover)){
                 settings.hover.call(this)
             }
-            if (settings.div_color1){
-                $('div.hs-fullyearcalendar-semester-1 div').css('background-color',settings.div_color1)
+            if (settings.div_color_1){
+                $('div.hs-fullyearcalendar-semester-1 div').css('background-color',settings.div_color_1)
                 
             }
 
